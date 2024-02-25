@@ -51,6 +51,12 @@ public class DressUp : MonoBehaviour
     void ChangeClothes(int index)
     {
         //CHANGE APPEARED CLOTHES
-        clothesImages[index].sprite = clothes[index][indices[index]];
+        Sprite sprite = clothes[index][indices[index]];
+        Image clothesImg = clothesImages[index];
+        
+        clothesImg.sprite = sprite;
+
+        //make transparent if no image
+        clothesImg.color = sprite!=null ? Color.white : new Color(1,1,1,0);
     }
 }
