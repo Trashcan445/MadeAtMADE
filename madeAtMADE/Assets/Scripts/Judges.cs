@@ -13,6 +13,10 @@ public class Judges : MonoBehaviour
     [TextArea(3,25)] public string[] good;
     [TextArea(3,25)] public string[] great;
     string[][] speeches {get{return new string[][]{bad,okay,good,great};}}
+
+    public float minTimeBetweenSpeech = 1f;
+    float timeSinceSpeech = 0f;
+
     [Space]
     public Transform[] judges;
     [Space]
@@ -28,30 +32,50 @@ public class Judges : MonoBehaviour
     public int moneyInterval = 2500;
     public Vector2Int bribeAmt = new Vector2Int(10,100);
     int speechIndex {get{return Mathf.Clamp(moneyGiven / moneyInterval, 0, speeches.Length-1);}}
+    public bool[] talking = new bool[3];
 
     void Start()
     {
         onJudgingStart?.Invoke();
+
+        Invoke("SpeakRandom", 0.5f);
+        Invoke("SpeakRandom", 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && timeSinceSpeech > minTimeBetweenSpeech)
         {
-            Speak(judges[Random.Range(0, judges.Length)].position, speeches[speechIndex][Random.Range(0, speeches[speechIndex].Length)]);
+            SpeakRandom();
         }
+
+        timeSinceSpeech+=Time.deltaTime;
     }
 
-    void Speak(Vector3 position, string text)
+    void SpeakRandom()
+    {
+        int judgeIndex = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            judgeIndex = Random.Range(0, judges.Length);
+            if(!talking[judgeIndex]) break;
+        }
+        Speak(judges[judgeIndex].position, speeches[speechIndex][Random.Range(0, speeches[speechIndex].Length)], judgeIndex);
+        timeSinceSpeech = 0f;
+    }
+
+    void Speak(Vector3 position, string text, int judge)
     {
         GameObject bubble = Instantiate(speechBubblePrefab, canvas);
         bubble.transform.position = position;
-        StartCoroutine(Speak_Coroutine(bubble, text));
+        StartCoroutine(Speak_Coroutine(bubble, text, judge));
     }
 
-    IEnumerator Speak_Coroutine(GameObject bubble, string text)
+    IEnumerator Speak_Coroutine(GameObject bubble, string text, int judge)
     {
+        talking[judge] = true;
+
         TextMeshProUGUI txt = bubble.GetComponentInChildren<TextMeshProUGUI>();
         txt.text = "";
 
@@ -66,6 +90,8 @@ public class Judges : MonoBehaviour
         yield return new WaitForSeconds(destroyDelay);
 
         bubble.GetComponent<Animator>().Play("close");
+
+        talking[judge] = false;
 
         yield return new WaitForSeconds(1f);
 
