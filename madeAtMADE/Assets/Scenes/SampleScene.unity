@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 66904993}
   - component: {fileID: 66904995}
   - component: {fileID: 66904994}
+  - component: {fileID: 66904996}
   m_Layer: 5
   m_Name: PLAYERsprite
   m_TagString: Untagged
@@ -158,7 +159,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 76.2, y: 163.8}
+  m_SizeDelta: {x: 225, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66904994
 MonoBehaviour:
@@ -180,9 +181,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c131749a484db0e4e8789856ab082c47, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -198,6 +199,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66904992}
   m_CullTransparentMesh: 1
+--- !u!95 &66904996
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66904992}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 435568e5c167e0b43be24af368d40146, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &105127534
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -46.4}
   m_SizeDelta: {x: 85, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &175873433
@@ -242,6 +264,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1970377675}
     m_Modifications:
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3526570269107883764, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_Name
       value: dressup_BUTTONS
@@ -312,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 60
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -325,6 +375,34 @@ PrefabInstance:
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -369,7 +447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -69.47}
+  m_AnchoredPosition: {x: 0, y: -88.78}
   m_SizeDelta: {x: 85, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
@@ -648,7 +726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d0f0e585dab80bf418674c1084857b4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -676,6 +754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986437625}
   - component: {fileID: 986437626}
+  - component: {fileID: 986437627}
   m_Layer: 5
   m_Name: PLAYER
   m_TagString: Untagged
@@ -703,9 +782,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -81.899994}
   m_SizeDelta: {x: 76.2, y: 163.8}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &986437626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,6 +797,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260c04620a2977241a80be2c47a5da1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hats:
+  - {fileID: 21300000, guid: c778c55c2ad3a4d4ea1ffffb94a9f36f, type: 3}
+  - {fileID: 21300000, guid: d0f0e585dab80bf418674c1084857b4b, type: 3}
+  tops:
+  - {fileID: 21300000, guid: c778c55c2ad3a4d4ea1ffffb94a9f36f, type: 3}
+  - {fileID: 21300000, guid: d0f0e585dab80bf418674c1084857b4b, type: 3}
+  bottoms:
+  - {fileID: 21300000, guid: c778c55c2ad3a4d4ea1ffffb94a9f36f, type: 3}
+  - {fileID: 21300000, guid: d0f0e585dab80bf418674c1084857b4b, type: 3}
+  clothesImages:
+  - {fileID: 771376128}
+  - {fileID: 2049837140}
+  - {fileID: 1027118328}
+  indices: 000000000000000000000000
+--- !u!95 &986437627
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986437624}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1127ce3f4390312468140262d62a2e83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1027118326
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,7 +889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c778c55c2ad3a4d4ea1ffffb94a9f36f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -894,7 +1008,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 83.6}
+  m_AnchoredPosition: {x: 0, y: 56.04}
   m_SizeDelta: {x: 85, y: 59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1438458131
@@ -1039,6 +1153,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1970377675}
     m_Modifications:
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3526570269107883764, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_Name
       value: dressup_BUTTONS (1)
@@ -1109,7 +1255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1122,6 +1268,38 @@ PrefabInstance:
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1141,6 +1319,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1970377675}
     m_Modifications:
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesBackward
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 794524872914965640, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3526570269107883764, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_Name
       value: dressup_BUTTONS (2)
@@ -1211,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1224,6 +1434,38 @@ PrefabInstance:
     - target: {fileID: 7090579752909967375, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 986437626}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CycleClothesForward
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DressUp, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367217707734445180, guid: 76254590a5b54ec46ad1802a77d9c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1398,7 +1640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d0f0e585dab80bf418674c1084857b4b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
