@@ -14,8 +14,9 @@ public class Judges : MonoBehaviour
     [TextArea(3,25)] public string[] great;
     string[][] speeches {get{return new string[][]{bad,okay,good,great};}}
 
-    public float minTimeBetweenSpeech = 1f;
-    float timeSinceSpeech = 0f;
+    float minTimeBetweenSpeech = 1f;
+    public Vector2 timeBetweenSpeech;
+    [HideInInspector] public float timeSinceSpeech = 0f;
 
     [Space]
     public Transform[] judges;
@@ -38,20 +39,23 @@ public class Judges : MonoBehaviour
     void Start()
     {
         onJudgingStart?.Invoke();
-
-        Invoke("SpeakRandom", 0.5f);
-        Invoke("SpeakRandom", 1f);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && timeSinceSpeech > minTimeBetweenSpeech)
+        if(MinigameTimer.instance.bribeMinigame.gameObject.activeSelf)
         {
-            SpeakRandom();
-        }
+            if(timeSinceSpeech > minTimeBetweenSpeech)
+            {
+                SpeakRandom();
+                minTimeBetweenSpeech = Random.Range(timeBetweenSpeech.x, timeBetweenSpeech.y);
+                timeSinceSpeech = 0f;
+            }
 
-        timeSinceSpeech+=Time.deltaTime;
+            timeSinceSpeech+=Time.deltaTime;
+        }
     }
 
     void SpeakRandom()
@@ -104,12 +108,17 @@ public class Judges : MonoBehaviour
         moneyGiven+=Random.Range(bribeAmt.x, bribeAmt.y);
         moneyCount.text = "$" + (moneyGiven / 100f).ToString("f2");
 
-        int maxMoney = moneyInterval * speeches.Length;
-        judgefavorBar.localScale = new Vector3(moneyGiven / (maxMoney * 1f), 1f, 1f);
-
+        SetJudgeFavorBar();
+int maxMoney = moneyInterval * speeches.Length;
         if(moneyGiven >= maxMoney)
         {
             MinigameTimer.bribedSuccessfully = true;
         }
+    }
+
+    public void SetJudgeFavorBar()
+    {
+        int maxMoney = moneyInterval * speeches.Length;
+        judgefavorBar.localScale = new Vector3(moneyGiven / (maxMoney * 1f), 1f, 1f);
     }
 }
