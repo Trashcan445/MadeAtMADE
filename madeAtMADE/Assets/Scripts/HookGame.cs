@@ -10,6 +10,7 @@ public class HookGame : MonoBehaviour
     float timeSinceHook = 0f;
     float timeToHook;
     public Vector2 timeToHookrange = new Vector2(1.5f,3f);
+    public AudioSource source;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class HookGame : MonoBehaviour
     void Update()
     {
         if(MinigameTimer.lost) return;
-        
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             player.Play("jumpOverHook");
@@ -35,6 +36,9 @@ public class HookGame : MonoBehaviour
             timeSinceHook = 0f;
             SetRandomHookTime();
             hook.Play("hook");
+
+            if(source.isPlaying)source.Stop();
+            source.Play();
         }
 
         timeSinceHook += Time.deltaTime;

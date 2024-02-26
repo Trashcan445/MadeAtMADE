@@ -38,7 +38,7 @@ public class MinigameTimer : MonoBehaviour
 
     void Start()
     {
-        //mgame = (Minigame) Random.Range(0,2);
+        mgame = (Minigame) Random.Range(0,3);
 
         bribeMinigame.SetActive(false);
         hookMinigame.SetActive(false);

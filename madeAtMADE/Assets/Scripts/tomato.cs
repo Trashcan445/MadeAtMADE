@@ -7,6 +7,18 @@ public class tomato : MonoBehaviour
 {
     public bool active;
     public float radius;
+    public AudioClip throwclip;
+    public AudioClip splatclip;
+    public AudioSource source;
+
+    public void PlayThrow(){
+        source.PlayOneShot(throwclip);
+    }
+
+    public void PlaySplat(){
+        source.PlayOneShot(splatclip);
+    }
+
 
     void Start()
     {
