@@ -33,6 +33,7 @@ public class Judges : MonoBehaviour
     public Vector2Int bribeAmt = new Vector2Int(10,100);
     int speechIndex {get{return Mathf.Clamp(moneyGiven / moneyInterval, 0, speeches.Length-1);}}
     public bool[] talking = new bool[3];
+    public Transform judgefavorBar;
 
     void Start()
     {
@@ -102,5 +103,13 @@ public class Judges : MonoBehaviour
     {
         moneyGiven+=Random.Range(bribeAmt.x, bribeAmt.y);
         moneyCount.text = "$" + (moneyGiven / 100f).ToString("f2");
+
+        int maxMoney = moneyInterval * speeches.Length;
+        judgefavorBar.localScale = new Vector3(moneyGiven / (maxMoney * 1f), 1f, 1f);
+
+        if(moneyGiven >= maxMoney)
+        {
+            MinigameTimer.bribedSuccessfully = true;
+        }
     }
 }
